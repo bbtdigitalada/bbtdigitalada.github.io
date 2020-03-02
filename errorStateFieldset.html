@@ -42,7 +42,9 @@
 <li>The word "invalid"or "unavailable" in both cases</li>
 <li>Reads the error message (in both cases)</li>
 </ul>
-<h3.The results</h3>
+<h3>The results</h3>
+	
+JAWS: 
 <ul>
 <li>Jaws + Chrome - success (reads "Choose a side, invalid entry, error, you must choose a side"</li>
 <li>Jaws + Firefox - success (reads "Choose a side, invalid entry, error, you must choose a side"</li>
@@ -60,7 +62,11 @@ Voiceover:
 <ul>
 <li>iOS 13 + VoiceOver - success on both the group label and radio buttons.
 </ul>
-	
+
+	Android:
+	<ul>
+		<li> Android 10 + Talkback: fail. Not on the group label, no aria-invalid, and not on the radio button label.</li>
+	</ul>
 </body>
 </html>
 
