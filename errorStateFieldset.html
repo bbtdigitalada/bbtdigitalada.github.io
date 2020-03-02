@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Testing group level error messages</title>
+</head>
+<body>
+<h1>Testing group level error messages</h1>
+
+<p>Using aria-invalid to mark the group element as invalid and aria-describedby to connect the group with the error messages.</p>
+<p>Full success if screen readers announce the group as invalid and announce the error message when focus lands on an radiobutton in the group.</p>
+
+<h2>The example</h2>
+<a href="http://www.google.com">Google</a>
+
+<fieldset aria-invalid="true" aria-describedby="err1">
+<legend>Choose a side</legend>
+<span id="err1">Error! You must choose a side</span>
+
+<label>
+	<input type="radio" name="g1">
+	<span>Tomatoes</span>
+</label>
+
+<label>
+	<input type="radio" name="g1">
+	<span>Potatoes</span>
+</label>
+
+<label>
+	<input type="radio" name="g1">
+	<span>Rocks</span>
+</label>
+
+</fieldset>
+<a href="http://www.microsoft.com">Microsoft</a>
+
+<h2>Screen reader compatibility</h2.
+<h3>The methodology</h3>
+<p>With a screen reader running, tab from the Google link to the radio buttons and shift-tab from the Microsoft link to the radio buttons.</p>
+<p>Successful if screen reader announces: <p>
+<ul>
+<li>The word "invalid"or "unavailable" in both cases</li>
+<li>Reads the error message (in both cases)</li>
+</ul>
+<h3.The results</h3>
+<ul>
+<li>Jaws + Chrome - success (reads "Choose a side, invalid entry, error, you must choose a side"</li>
+<li>Jaws + Firefox - success (reads "Choose a side, invalid entry, error, you must choose a side"</li>
+<li>Jaws +IE - fail (reads neither the invalid indicator nor the error message</li>
+</ul>
+
+NVDA:
+
+<ul>
+<li>NVDA + Chrome - success  - "Choose a side, grouping, invalid entry, error, you must choose a side"</li>
+<li>NVDA + Firefox - success - ditto.</li>
+</ul>
+
+</body>
+</html>
+
